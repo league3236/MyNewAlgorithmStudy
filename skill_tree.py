@@ -30,17 +30,19 @@ BDA: B 스킬을 배우기 전에 C 스킬을 먼저 배워야 합니다. 불가
 
 def solution(skill, skill_trees):
     answer = 0
-    skill_list=[]
-    for i in range(1,len(skill)+1):
-        skill_list.append(skill[:i])
 
     for j in skill_trees:
-        li = ''
+        li = []
         for k in j:
             if k in skill:
-                li = li+k
-        if li in skill_list:
-            answer = answer + 1
+                li.append(k)
+        flag = True
+        for i in range(len(li)):
+            if skill[i] != li[i]:
+                flag = False
+                break
+        if flag == True:
+            answer += 1
 
     return answer
 
