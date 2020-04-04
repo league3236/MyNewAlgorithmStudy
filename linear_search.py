@@ -1,7 +1,6 @@
 
 def linear_search(element, some_list):
     # 코드를 작성하세요.
-    # element
     l = len(some_list)
     for i in range(l):
         if element == some_list[i]:
