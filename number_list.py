@@ -22,17 +22,15 @@ phone_book	return
 
 def solution(phone_book):
     answer = True
-    phone_book = sorted(phone_book)
-    for i in phone_book:
-        stri = str(i)
-        for j in phone_book:
+    for i in range(len(phone_book)):
+        for j in phone_book[i:]:
             strj = str(j)
-            if (stri == strj):
-                continue
-            if (stri[:len(stri)] in strj):
-                answer = False
-                break
-        # print(stri[:len(i)-1])
+            if phone_book[i] != j:
+                if str(phone_book[i]) in strj:
+                    answer = False
+                    break
+        if answer == False:
+            break
     return answer
 
 print(solution([119, 97674223, 1195524421]))
