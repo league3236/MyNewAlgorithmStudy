@@ -27,8 +27,9 @@ def solution(phone_book):
             strj = str(j)
             if phone_book[i] != j:
                 if str(phone_book[i]) in strj:
-                    answer = False
-                    break
+                    if strj[:len(str(phone_book[i]))] == str(phone_book[i]):
+                        answer = False
+                        break
         if answer == False:
             break
     return answer
