@@ -21,20 +21,13 @@ phone_book	return
 '''
 
 def solution(phone_book):
-    answer = True
-    for i in range(len(phone_book)):
-        for j in phone_book[i:]:
-            strj = str(j)
-            if phone_book[i] != j:
-                if str(phone_book[i]) in strj:
-                    if strj[:len(str(phone_book[i]))] == str(phone_book[i]):
-                        answer = False
-                        break
-        if answer == False:
-            break
-    return answer
+    phone_book.sort()
+    for i, j in zip(phone_book, phone_book[1:]):
+        if j.startswith(i):
+            return False
+    return True 
 
-print(solution([119, 97674223, 1195524421]))
-print(solution([123,456,789]))
-print(solution([12,123,1235,567,88]))
+print(solution(['119', '97674223', '1195524421']))
+print(solution(['123','456','789']))
+print(solution(['12','123','1235','567','88']))
 
