@@ -3,9 +3,6 @@ def sum_digits(n):
         return n
     return  n%10+sum_digits(n/10)
 
-print(22541%10)
-print((22541/10))
-
 print(sum_digits(22541))
 print(sum_digits(92130))
 print(sum_digits(12634))
