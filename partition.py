@@ -27,8 +27,12 @@ def partition(my_list, start, end):
 
     
 # 퀵 정렬
-def quicksort(my_list, start, end):
+def quicksort(my_list, start=0, end=None):
     # 코드를 작성하세요.
+    
+    if end == None:
+        end = len(my_list) - 1    
+
     if end - start < 1:
         return
     
