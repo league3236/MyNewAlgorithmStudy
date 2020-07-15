@@ -8,15 +8,14 @@
 def solution(a, b):
     answer = ''
     sum = 0
-    enum = ['FRI','SAT','SUN','MON','TUE','WED','THU']
+    enum = ['SAT','SUN','MON','TUE','WED','THU','FRI']
     month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-    # for idx, value in enumerate(month):
-    #     print(value)
-
     for idx in range(0,a-1):
-        print(idx)
+        sum += month[idx]
+    sum += b
+    answer = enum[sum % 7]
 
     return answer
 
-solution(5,24)
+print(solution(5,24))
