@@ -8,7 +8,7 @@
 def solution(a, b):
     answer = ''
     sum = 0
-    enum = ['SAT','SUN','MON','TUE','WED','THU','FRI']
+    enum = ['THU','FRI','SAT','SUN','MON','TUE','WED']
     month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
     for idx in range(0,a-1):
