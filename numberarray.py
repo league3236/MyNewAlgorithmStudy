@@ -3,8 +3,10 @@
 
 def solution(arr, divisor):
     answer = [i for i in arr if i%divisor==0]
+    if not answer:
+        return [-1]
     answer.sort()
     return answer
 
-list = solution([2,36,1,3],1)
+list = solution([2,36,1,3],5)
 print(list)
