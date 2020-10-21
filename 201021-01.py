@@ -3,17 +3,18 @@
 # 인자가 필요없을 때에도 self는 사용
 # 클래스의 attribute 는 내부에서 접근시, self.attribute 명으로 접근
 
-class Quadrangle:
-    width = 0
-    height = 0
-    color = "black"
+# class Quadrangle:
+#     width = 0
+#     height = 0
+#     color = "black"
     
-    def get_area(self):
-        return self.width * self.height
+#     def get_area(self):
+#         return self.width * self.height
 
-    def set_area(self, data1, data2):
-        self.width = data1
-        self.height = data2
+#     def set_area(self, data1, data2):
+#         self.width = data1
+#         self.height = data2
+        # 클래스에서 self.attribute 명을 사용할 수는 없음 (self는 객체를 나타냄)
 
 class SingleWord:
     pass
@@ -74,3 +75,16 @@ square.set_area(5,5)
 
 print(square.width)
 print(square.get_area())
+
+class Quadrangle:
+    def __init__(self, width, height, color):
+        self.width = width
+        self.height = height
+        self.color = color
+
+square = Quadrangle(5, 5, "black")
+
+print(square.width)
+
+del square
+
